@@ -4,11 +4,21 @@ import { Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
     const [text, setText] = useState('');
+    const [todo, setTodo] = useState([]);
+
     const onTextChangeHandler = (value) => {
         setText(value);
     };
+
     const onButtonPressHandler = () => {
-        alert(`You have entered: ${text}`);
+        if (!text) return alert('Please enter a todo item');
+        const newTodo = {
+            text,
+            completed: false,
+        }
+        setTodo(oldTodo => [...oldTodo, newTodo]);
+        console.log(todo);
+        setText('');
     }
     return (
         <View style={styles.body}>
@@ -22,6 +32,7 @@ export default function App() {
                 value={text} 
                 placeholder='insert your text here'
                 onChangeText={onTextChangeHandler}
+                onSubmitEditing={onButtonPressHandler}
                 />
                 <Button 
                 title='Create'
@@ -30,7 +41,7 @@ export default function App() {
                 
             </View>
             <View>
-                <Text>View</Text>
+                {todo.map((todoItem) => <Text key={todoItem.text}>{todoItem.text}</Text>)}
             </View>
         </View>
     );
