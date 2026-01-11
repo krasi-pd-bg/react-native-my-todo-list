@@ -1,6 +1,8 @@
 
 import { useState } from 'react';
 import { Text, View, TextInput, Button } from 'react-native';
+import TodoItem from './components/TodoItem';
+
 
 export default function App() {
     const [text, setText] = useState('');
@@ -17,7 +19,7 @@ export default function App() {
             completed: false,
         }
         setTodo(oldTodo => [...oldTodo, newTodo]);
-        console.log(todo);
+
         setText('');
     }
     return (
@@ -41,7 +43,7 @@ export default function App() {
                 
             </View>
             <View>
-                {todo.map((todoItem) => <Text key={todoItem.text}>{todoItem.text}</Text>)}
+                {todo.map((todoItem) => <TodoItem key={todoItem.text} item={todoItem} />)}
             </View>
         </View>
     );
