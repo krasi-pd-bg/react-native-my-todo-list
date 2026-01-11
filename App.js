@@ -6,7 +6,7 @@ export default function App() {
         <View style={styles.body}>
 
             <View>
-                <Text>TODO List</Text>
+                <Text style={styles.heading}>TODO List</Text>
             </View>
             <View>
                 <Text>Body</Text>
@@ -25,6 +25,11 @@ const styles = {
         backgroundColor: '#42a39e',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    heading: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 20,
     },
 
 };
