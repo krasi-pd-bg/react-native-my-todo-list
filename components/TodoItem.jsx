@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
 
 export default function TodoItem({ item }) {
-    console.log(item);
+    
     return (
         <View style={styles.itemContainer}>
             <Text>{item.text}</Text>

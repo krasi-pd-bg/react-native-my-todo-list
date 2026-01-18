@@ -1,6 +1,8 @@
 
 import { useState } from 'react';
-import { View, StyleSheet, StatusBar, Platform } from 'react-native';
+import { View, StyleSheet, StatusBar, Platform, Keyboard } from 'react-native';
+import 'react-native-get-random-values';
+import { v4 } from 'uuid';
 import HeadView from './components/HeadView';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
@@ -18,11 +20,13 @@ export default function App() {
         const os = Platform.OS
         if (!text) return alert(` ${os}: Please enter a todo item`);
         const newTodo = {
+            id: v4(),
             text,
             completed: false,
         }
         setTodo(oldTodo => [...oldTodo, newTodo]);
         setText('');
+        Keyboard.dismiss();
     }
     return (
         <View style={styles.body}>
