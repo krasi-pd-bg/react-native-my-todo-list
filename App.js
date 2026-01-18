@@ -28,6 +28,11 @@ export default function App() {
         setText('');
         Keyboard.dismiss();
     }
+
+    const onDone = (id) => {
+        setTodo(oldTodo => oldTodo.map(item => item.id === id ? { ...item, completed: !item.completed } : item));
+    }
+
     return (
         <View style={styles.body}>
             <StatusBar barStyle="dark-content" backgroundColor="#42a39e" />
@@ -37,7 +42,7 @@ export default function App() {
                 onButtonPressHandler={onButtonPressHandler}
                 text={text}
             />
-            <TodoList todo={todo} />           
+            <TodoList todo={todo} onDone={onDone} />           
             
         </View>
     );

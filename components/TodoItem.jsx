@@ -1,11 +1,11 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-export default function TodoItem({ item }) {
+export default function TodoItem({ item, onDone }) {
     
     return (
         <View style={styles.itemContainer}>
             <Text>{item.text}</Text>
-            <Button title={item.completed ? 'Done' : 'Undone'} disabled /> 
+            <Button title={item.completed ? 'Done' : 'Undone'} onPress={() => {onDone(item.id)}}/> 
         </View>
     );
 };
