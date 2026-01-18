@@ -32,6 +32,9 @@ export default function App() {
     const onDone = (id) => {
         setTodo(oldTodo => oldTodo.map(item => item.id === id ? { ...item, completed: !item.completed } : item));
     }
+    const onDelete = (id) => {
+        setTodo(oldTodo => oldTodo.filter(item => item.id !== id));
+    }
 
     return (
         <View style={styles.body}>
@@ -42,7 +45,7 @@ export default function App() {
                 onButtonPressHandler={onButtonPressHandler}
                 text={text}
             />
-            <TodoList todo={todo} onDone={onDone} />           
+            <TodoList todo={todo} onDone={onDone} onDelete={onDelete} />           
             
         </View>
     );
