@@ -74,7 +74,7 @@ function TodoInput({ onTextChangeHandler, onButtonPressHandler, text }) {
                     onChangeText={onTextChangeHandler}
                     onSubmitEditing={onButtonPressHandler}
                 />
-                <Pressable 
+                <Pressable
                     onPress={onButtonPressHandler}
                     hitSlop={10}
                     style={styles.iconButton}
