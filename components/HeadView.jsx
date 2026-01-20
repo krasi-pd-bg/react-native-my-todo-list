@@ -21,13 +21,14 @@ const BACKGROUND_IMAGE = {
 };
 
 function HeadView() {
+    const today = new Date(); const formattedDate = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', });
     return (
         <ImageBackground
             source={BACKGROUND_IMAGE}
             style={styles.background}
             resizeMode="cover"
         >
-            <Text style={styles.nameText}>Krasimir Dimitrov</Text>
+            <Text style={styles.nameText}>{formattedDate}</Text>
         </ImageBackground>
     );
 }
@@ -38,11 +39,11 @@ export default memo(HeadView);
 const styles = StyleSheet.create({
     background: {
         width: '100%',
-        height: 150,
-        opacity: 0.8,
-        justifyContent: 'center',
+        height: 200,
+        opacity: 1,
+        justifyContent: 'top',
         alignItems: 'flex-start',
-        paddingLeft: 20,
+        paddingLeft: 15,
     },
     nameText: {
         color: 'white',
