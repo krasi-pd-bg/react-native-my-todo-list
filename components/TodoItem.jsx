@@ -73,11 +73,11 @@ const CheckIcon = memo(({ size = 30, color = 'gray' }) => (
     <Check size={size} color={color} />
 ));
 
-const CheckCheckIcon = memo(({ size = 30, color = 'green' }) => (
+const CheckCheckIcon = memo(({ size = 30, color =  '#084e06'}) => (
     <CheckCheck size={size} color={color} />
 ));
 
-const CircleXIcon = memo(({ size = 30, color = 'red' }) => (
+const CircleXIcon = memo(({ size = 30, color = '#7c2f2f' }) => (
     <CircleX size={size} color={color} />
 ));
 
@@ -141,9 +141,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'black',
         borderRadius: 12,
-        backgroundColor: '#629191fb',
+        backgroundColor: '#0A0A0A',
         marginBottom: 10,
         marginRight: 10,
+        marginLeft: 10,
     },
     ticksContainer: {
         flexDirection: 'row',
@@ -155,6 +156,7 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 12,
         maxWidth: '70%',
+        color: '#666666',
     },
     iconButton: {
         width: 36,

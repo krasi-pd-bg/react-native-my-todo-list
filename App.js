@@ -101,13 +101,13 @@
 //     const onButtonPressHandler = useCallback(() => {
 //         const os = Platform.OS;
 //         if (!text) return alert(`${os}: Please enter a todo item`);
-        
+
 //         const newTodo = {
 //             id: v4(),
 //             text,
 //             completed: false,
 //         };
-        
+
 //         setTodo(oldTodo => [...oldTodo, newTodo]);
 //         setText('');
 //         Keyboard.dismiss();
@@ -158,8 +158,89 @@
 //     },
 // });
 
+// import { useState, useCallback } from 'react';
+// import { StyleSheet, StatusBar, Platform, Keyboard, TouchableWithoutFeedback, View } from 'react-native';
+// import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+// import 'react-native-get-random-values';
+// import { v4 } from 'uuid';
+// import HeadView from './components/HeadView';
+// import TodoInput from './components/TodoInput';
+// import TodoList from './components/TodoList';
+
+// export default function App() {
+//     const [text, setText] = useState('');
+//     const [todo, setTodo] = useState([]);
+
+//     const onTextChangeHandler = useCallback((value) => {
+//         setText(value);
+//     }, []);
+
+//     const onButtonPressHandler = useCallback(() => {
+//         const os = Platform.OS;
+//         if (!text) return alert(`${os}: Please enter a todo item`);
+
+//         const newTodo = {
+//             id: v4(),
+//             text,
+//             completed: false,
+//         };
+
+//         setTodo(oldTodo => [...oldTodo, newTodo]);
+//         setText('');
+//         Keyboard.dismiss();
+//     }, [text]);
+
+//     const onDone = useCallback((id) => {
+//         setTodo(oldTodo => 
+//             oldTodo.map(item => 
+//                 item.id === id 
+//                     ? { ...item, completed: !item.completed } 
+//                     : item
+//             )
+//         );
+//     }, []);
+
+//     const onDelete = useCallback((id) => {
+//         setTodo(oldTodo => oldTodo.filter(item => item.id !== id));
+//     }, []);
+
+//     return (
+//         <SafeAreaProvider>
+//             <SafeAreaView style={styles.container} edges={['top']}>
+//                 <StatusBar barStyle="dark-content" backgroundColor="#42a39e" />
+
+//                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+//                     <View style={styles.content}>
+//                         <HeadView />
+//                         <TodoInput
+//                             onTextChangeHandler={onTextChangeHandler}
+//                             onButtonPressHandler={onButtonPressHandler}
+//                             text={text}
+//                         />
+//                     </View>
+//                 </TouchableWithoutFeedback>
+
+//                 {/* TodoList извън TouchableWithoutFeedback за да не блокира скролването */}
+//                 <TodoList todo={todo} onDone={onDone} onDelete={onDelete} />
+//             </SafeAreaView>
+//         </SafeAreaProvider>
+//     );
+// }
+
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         backgroundColor: '#42a39e',
+//     },
+//     content: {
+//         padding: 20,
+//         paddingBottom: 10,
+//         gap: 20,
+//     },
+// });
+
 import { useState, useCallback } from 'react';
-import { StyleSheet, StatusBar, Platform, Keyboard, TouchableWithoutFeedback, View } from 'react-native';
+import { StyleSheet, StatusBar, Platform, Keyboard, TouchableWithoutFeedback, View, ImageBackground } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import 'react-native-get-random-values';
 import { v4 } from 'uuid';
@@ -178,23 +259,23 @@ export default function App() {
     const onButtonPressHandler = useCallback(() => {
         const os = Platform.OS;
         if (!text) return alert(`${os}: Please enter a todo item`);
-        
+
         const newTodo = {
             id: v4(),
             text,
             completed: false,
         };
-        
+
         setTodo(oldTodo => [...oldTodo, newTodo]);
         setText('');
         Keyboard.dismiss();
     }, [text]);
 
     const onDone = useCallback((id) => {
-        setTodo(oldTodo => 
-            oldTodo.map(item => 
-                item.id === id 
-                    ? { ...item, completed: !item.completed } 
+        setTodo(oldTodo =>
+            oldTodo.map(item =>
+                item.id === id
+                    ? { ...item, completed: !item.completed }
                     : item
             )
         );
@@ -206,31 +287,37 @@ export default function App() {
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView style={styles.container} edges={['top']}>
-                <StatusBar barStyle="dark-content" backgroundColor="#42a39e" />
-                
-                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                    <View style={styles.content}>
-                        <HeadView />
-                        <TodoInput
-                            onTextChangeHandler={onTextChangeHandler}
-                            onButtonPressHandler={onButtonPressHandler}
-                            text={text}
-                        />
-                    </View>
-                </TouchableWithoutFeedback>
-                
-                {/* TodoList извън TouchableWithoutFeedback за да не блокира скролването */}
-                <TodoList todo={todo} onDone={onDone} onDelete={onDelete} />
-            </SafeAreaView>
+            <ImageBackground
+                source={require('./assets/images/dark-pattern.jpg')}
+                style={styles.background}
+            >
+                <SafeAreaView style={styles.container} edges={['top']}>
+                    <StatusBar barStyle="light-content" />
+
+                    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                        <View style={styles.content}>
+                            <HeadView />
+                            <TodoInput
+                                onTextChangeHandler={onTextChangeHandler}
+                                onButtonPressHandler={onButtonPressHandler}
+                                text={text}
+                            />
+                        </View>
+                    </TouchableWithoutFeedback>
+                    <TodoList todo={todo} onDone={onDone} onDelete={onDelete} />
+                </SafeAreaView>
+            </ImageBackground>
         </SafeAreaProvider>
     );
 }
 
 const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+        paddingBottom: 40,
+    },
     container: {
         flex: 1,
-        backgroundColor: '#42a39e',
     },
     content: {
         padding: 20,

@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     background: {
         width: '100%',
         height: 150,
-        opacity: 0.4,
+        opacity: 0.8,
         justifyContent: 'center',
         alignItems: 'flex-start',
         paddingLeft: 20,

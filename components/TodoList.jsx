@@ -52,6 +52,6 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     contentContainer: {
-        paddingBottom: 20,
+        paddingBottom: 30,
     },
 });
