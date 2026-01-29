@@ -7,7 +7,7 @@ const CheckIcon = memo(({ size = 30, color = 'gray' }) => (
     <Check size={size} color={color} />
 ));
 
-const CheckCheckIcon = memo(({ size = 30, color =  '#084e06'}) => (
+const CheckCheckIcon = memo(({ size = 30, color = '#084e06' }) => (
     <CheckCheck size={size} color={color} />
 ));
 

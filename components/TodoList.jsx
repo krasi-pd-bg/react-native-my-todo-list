@@ -11,10 +11,10 @@ function TodoList({ todo, onDone, onDelete }) {
             data={todo}
             keyExtractor={keyExtractor}
             renderItem={({ item }) => (
-                <TodoItem 
-                    item={item} 
-                    onDone={onDone} 
-                    onDelete={onDelete} 
+                <TodoItem
+                    item={item}
+                    onDone={onDone}
+                    onDelete={onDelete}
                 />
             )}
             style={styles.list}

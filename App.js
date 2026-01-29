@@ -39,8 +39,6 @@ useEffect(() => {
     saveTasks();
 }, [todo]);
 
-
-
     const onTextChangeHandler = useCallback((value) => {
         setText(value);
     }, []);
