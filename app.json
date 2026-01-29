@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react-native-my-todo-list",
+    "name": "todo",
     "slug": "react-native-my-todo-list",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,13 +17,19 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.krasi_pd_bg.reactnativemytodolist"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4ccd56d4-0fa7-4b21-8bc9-705cfad6ab96"
+      }
     }
   }
 }
