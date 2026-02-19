@@ -22,6 +22,6 @@
   },
   "private": true,
   "devDependencies": {
-    "eas-cli": "^16.31.0"
+    "eas-cli": "^18.0.1"
   }
 }
