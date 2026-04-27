@@ -13,7 +13,7 @@ export default memo(HeadView);
 
 const styles = StyleSheet.create({    
     nameText: {
-        color: 'white',
+        color: 'rgba(255, 255, 255, 0.75)',
         fontSize: 18,
         fontWeight: 'bold',
         textShadowColor: 'rgba(0, 0, 0, 0.75)',

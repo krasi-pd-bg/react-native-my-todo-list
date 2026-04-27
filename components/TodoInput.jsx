@@ -10,7 +10,7 @@ const CheckButton = memo(({ size = 36, color = '#084e06' }) => (
 function TodoInput({ onTextChangeHandler, onButtonPressHandler, text }) {
     return (
         <View>
-            <Text style={styles.heading}>TODO List ...</Text>
+            <Text style={styles.heading}>Quickie Notes ...</Text>
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.input}
@@ -43,12 +43,14 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         height: 60,
-        borderColor: '#3e4943',
+        borderColor: '#4a4a4a',
         borderWidth: 2,
-        borderRadius: 5,
+        borderRadius: 12,
         paddingHorizontal: 10,
         backgroundColor: '#0A0A0A',
-        color: 'white',
+        color: 'rgba(255, 255, 255, 0.75)',
+        color: '#666666',
+
     },
     inputContainer: {
         flexDirection: 'row',
@@ -57,10 +59,10 @@ const styles = StyleSheet.create({
         gap: 10,
         marginBottom: 20,
         width: '100%',
-        borderColor: '#3e4943',
+        borderColor: '#4a4a4a',
         borderWidth: 2,
         padding: 10,
-        borderRadius: 5,
+        borderRadius: 12,
         backgroundColor: '#0A0A0A',
         shadowColor: '#ffffff',
         shadowOffset: { width: 0, height: 0 },
@@ -72,12 +74,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
-        color: '#f3ecec',
-        textShadowColor: '#a59193',
-        textShadowOffset: { width: 3, height: 3 },
-        textShadowOpacity: 0.8,
-        textShadowRadius: 12,
-        elevation: 20,
+        color: 'rgba(255, 255, 255, 0.75)',
     },
     iconButton: {
         width: 40,

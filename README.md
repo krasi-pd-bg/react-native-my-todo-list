@@ -1,6 +1,10 @@
 # 📌 React Native Todo List
 A lightweight and intentionally minimalistic Todo List application built with React Native and Expo. The app is designed to be extremely fast, responsive, and distraction‑free by avoiding unnecessary features that slow down most task managers.
 
+## 💨 Why the Name “Quickie Notes”  
+The name **Quickie Notes** reflects the core philosophy of the app:  
+**instant, frictionless note‑taking without waiting for servers, syncing, or heavy UI elements.**
+
 ## ⚡ Performance‑Focused by Design
 This application is deliberately created without unnecessary or bloated functionality. By keeping the feature set minimal, the app achieves:
 - instant startup
@@ -22,6 +26,18 @@ The entire interface is built in a dark theme (Dark Mode) using soft, eye‑frie
 - comfortable long‑term use
 - a modern and elegant visual style
 - better usability in low‑light environments
+
+## 🖼️ Background Image Attribution  
+The background image used in this application is licensed from **Freepik**.  
+According to the license terms, attribution is required.
+
+**Attribution:**  
+Designed by *macrovector* / Freepik  
+https://www.freepik.com
+
+The image is used in compliance with Freepik’s licensing terms.  
+For full license details, please refer to:  
+https://www.freepik.com/terms_of_use
 
 ## 📱 Download the App (APK)
 You can download the latest Android APK here:
