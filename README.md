@@ -41,7 +41,7 @@ https://www.freepik.com/terms_of_use
 
 ## 📱 Download the App (APK)
 You can download the latest Android APK here:
-👉 https://expo.dev/artifacts/eas/dPfd8L4TpZy8yVUp3yNNo7.apk
+👉 https://expo.dev/artifacts/eas/x7jdjmrGMfv2jYoZHL4KHU.apk
 
 ## 🚀 Running the Project Locally
 Install dependencies:
