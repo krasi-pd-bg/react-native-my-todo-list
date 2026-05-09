@@ -45,7 +45,7 @@ useEffect(() => {
 
     const onButtonPressHandler = useCallback(() => {
         const os = Platform.OS;
-        if (!text.trim()) return alert(`${os}: Please enter a todo item`);
+        if (!text.trim()) return alert(`${os}: Please enter your notes here`);
 
         const newTodo = {
             id: v4(),

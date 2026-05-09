@@ -3,7 +3,7 @@ import { View, TextInput, StyleSheet, Text, Pressable } from 'react-native';
 import { CircleCheckBig } from 'lucide-react-native';
 
 // Мемоизирана иконка
-const CheckButton = memo(({ size = 36, color = '#084e06' }) => (
+const CheckButton = memo(({ size = 36, color = '#019401' }) => (
     <CircleCheckBig size={size} color={color} />
 ));
 
@@ -16,7 +16,7 @@ function TodoInput({ onTextChangeHandler, onButtonPressHandler, text }) {
                     style={styles.input}
                     value={text}
                     placeholder='type here...'
-                    placeholderTextColor="#666666"
+                    placeholderTextColor="#999999"
                     onChangeText={onTextChangeHandler}
                     onSubmitEditing={onButtonPressHandler}
                 />
@@ -43,13 +43,12 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         height: 60,
-        borderColor: '#4a4a4a',
+        borderColor: '#555555',
         borderWidth: 2,
         borderRadius: 12,
         paddingHorizontal: 10,
         backgroundColor: '#0A0A0A',
-        color: 'rgba(255, 255, 255, 0.75)',
-        color: '#666666',
+        color: '#eeeeee'
 
     },
     inputContainer: {
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
         gap: 10,
         marginBottom: 20,
         width: '100%',
-        borderColor: '#4a4a4a',
+        borderColor: '#555555',
         borderWidth: 2,
         padding: 10,
         borderRadius: 12,
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
-        color: 'rgba(255, 255, 255, 0.75)',
+        color: '#eeeeee',
     },
     iconButton: {
         width: 40,

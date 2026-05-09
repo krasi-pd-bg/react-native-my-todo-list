@@ -3,15 +3,15 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { CheckCheck, CircleX, Check } from 'lucide-react-native/icons';
 
 // Мемоизирани иконки - създават се веднъж
-const CheckIcon = memo(({ size = 30, color = 'gray' }) => (
+const CheckIcon = memo(({ size = 30, color = '#eeeeee' }) => (
     <Check size={size} color={color} />
 ));
 
-const CheckCheckIcon = memo(({ size = 30, color = '#084e06' }) => (
+const CheckCheckIcon = memo(({ size = 30, color = '#019401' }) => (
     <CheckCheck size={size} color={color} />
 ));
 
-const CircleXIcon = memo(({ size = 30, color = '#7c2f2f' }) => (
+const CircleXIcon = memo(({ size = 30, color = '#aa0000' }) => (
     <CircleX size={size} color={color} />
 ));
 
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 12,
         maxWidth: '70%',
-        color: '#666666',
+        color: '#eeeeee',
     },
     iconButton: {
         width: 36,
